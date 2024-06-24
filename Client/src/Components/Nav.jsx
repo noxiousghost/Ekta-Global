@@ -34,7 +34,7 @@ const [toggleMenu, setToggleMenu] = useState('0px')
         <Link href="/">Blog
         <i className="ri-arrow-down-s-line"></i>
         </Link>
-        <Link href="/" className='bg-black px-6 py-2 text-white rounded-2xl hover:bg-purple-500'>
+        <Link href="/" className='bg-black px-6 py-2 text-white rounded-2xl hover:bg-purple-500 '>
         Contact Us
         </Link>
     </div> 

@@ -13,25 +13,25 @@ const Footer = () => {
 
         <div className='flex flex-col gap-2'>
             <h1 className='md:mb-2 text-xl font-semibold text-white'>Company</h1>
-            <Link to='/'>Solutions For Marketting</Link>
-            <Link to='/' >Solutions For Sales</Link>
-            <Link to='/'>Pricing Plans</Link>
-            <Link to='/'>Contact</Link>
+            <Link to='/' className=' hover:text-white ' style={{transition:'.4s'}}>Solutions For Marketting</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}} >Solutions For Sales</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}}>Pricing Plans</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}}>Contact</Link>
         </div>
 
         <div className='flex flex-col gap-2'>
             <h1  className='md:mb-2 text-xl font-semibold text-white'>Integrations</h1>
-            <Link to='/' >Use Case</Link>
-            <Link to='/' >Integrations</Link>
-            <Link to='/' >Examples</Link>
-            <Link to='/' >API Docs</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}}>Use Case</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}} >Integrations</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}}>Examples</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}} >API Docs</Link>
         </div>
 
         <div className='flex flex-col gap-2'>
             <h1  className='md:mb-2 text-xl font-semibold text-white'>Resources</h1>
-            <Link to='/'>About US</Link>
-            <Link to='/' >Blogs</Link>
-            <Link to='/' >Docs</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}}>About US</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}} >Blogs</Link>
+            <Link to='/'  className=' hover:text-white ' style={{transition:'.4s'}} >Docs</Link>
         </div>
         
     </div>
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
         <div className='flex gap-4'>
             <Link to='https://www.facebook.com/'>
-            <i className="ri-facebook-fill text-white text-2xl" ></i>
+            <i className="ri-facebook-fill text-white text-2xl " ></i>
             </Link>
 
             <Link to='https://www.instagram.com/'>
