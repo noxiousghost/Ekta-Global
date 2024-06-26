@@ -43,16 +43,16 @@ const Footer = () => {
         <i className="ri-copyright-line text-white w-7 text-2xl"></i>
         <p className='text-white'>2024 Ekta-Global Pvt. Ltd</p>
         </div>
-        <div className='flex gap-4'>
-            <Link to='https://www.facebook.com/'>
+        <div className='flex gap-4 '>
+            <Link className='hover:animate-pulse' to='https://www.facebook.com/'>
             <i className="ri-facebook-fill text-white text-2xl " ></i>
             </Link>
 
-            <Link to='https://www.instagram.com/'>
+            <Link className='hover:animate-pulse' to='https://www.instagram.com/'>
             <i className="ri-instagram-line text-white text-2xl"></i>
             </Link>
 
-            <Link to='https://x.com/'>
+            <Link className='hover:animate-pulse' to='https://x.com/'>
             <i className="ri-twitter-line text-white text-2xl"></i>
             </Link>
         

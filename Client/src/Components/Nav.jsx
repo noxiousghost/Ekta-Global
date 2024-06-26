@@ -4,27 +4,52 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
   const navitem = [
     { name : 'Student Services',
-      link : '/home'
+      link : '/',
+      sublinks : 1
     },
     { name : 'Study Abroad',
-      link : '/home'
+      link : '/',
+      sublinks : 2
     },
     { name : 'Scholorships',
-      link : '/home'
+      link : '/',
+      sublinks : 3
     },
     { name : 'Test Preparation',
-      link : '/home'
+      link : '/',
+      sublinks : 4
     },
     { name : 'Success Stories',
-      link : '/home'
+      link : '/',
+      sublinks :5
     },
     { name : 'Blog',
-      link : '/home'
+      link : '/',
+      sublinks :6
     },
+    
   ]
 
 const [toggleMenu, setToggleMenu] = useState('0px')
 
+  const [dropdown, setDropdown] = useState(true)
+ 
+  const [hover, setHover]=useState(()=>{
+    return(
+      <div className='bg-white absolute shadow-lg'>
+        {
+          navitem.map((item, index)=>{
+            return(
+              <div key={index} className='px-10 py-4  cursor-pointer hover:bg-purple-500 hover:text-white'>
+               {item.sublinks}
+              </div>
+            )
+          })
+        }
+      </div>
+    )
+  })
+  
   return (
     <>
     
@@ -35,23 +60,39 @@ const [toggleMenu, setToggleMenu] = useState('0px')
           <img className='w-[100px]' src="/Images/logo.jpg" alt="logo" />
          </div>
 
-        <div className='flex gap-4 font-medium items-center'>
+        <div className='flex gap-4 font-medium items-center '>
         {
           navitem.map((prop, index)=>{
+            
             return(
-            <Link key={index} to={prop.link}>{prop.name}
+            <Link 
+            className='hover:text-purple-500'
+            onMouseOver={()=>setDropdown(true)} 
+            onMouseOut={()=>setDropdown(false)} 
+            key={index} to={prop.link}
+            >
+            {prop.name}
             <i className="ri-arrow-down-s-line"></i>
+
+            
+              {dropdown &&  hover}
+            
             </Link>
             )
           })
+          
         }
+        
         
         <Link href="/" className='bg-black px-6 py-2 text-white rounded-2xl hover:bg-purple-500 '>
         Contact Us
         </Link>
        </div> 
-         </div> 
+
          </div>
+         </div>
+
+         
          
 
 
@@ -72,7 +113,7 @@ const [toggleMenu, setToggleMenu] = useState('0px')
         {
           navitem.map((prop, key)=>{
             return(
-              <Link key={key} className='flex justify-between py-2 px-4' to={prop.link}>
+              <Link key={key} className='hover:text-purple-500 flex justify-between py-2 px-4' to={prop.link}>
             {prop.name}
          <i className="ri-arrow-right-s-line"></i>
          </Link>
