@@ -155,14 +155,50 @@ const [dropdown, setDropdown] = useState(null)
                      <i  className="ri-menu-fill font-bold text-xl mb-4 mr-2"></i>
                 </button>   
         {
-          navitem.map((prop, key)=>{
-            return(
-              <Link key={key} className='hover:text-purple-500 flex justify-between py-2 px-4' to={prop.link}>
-            {prop.name}
-         <i className="ri-arrow-right-s-line"></i>
-         </Link>
-            )
-          })
+        navitem.map((prop, index)=>{
+          return(
+            <>
+              <Link 
+                key={index} to={prop.link}
+              >
+                <div className=' hover:text-purple-500 flex  py-2 px-4 justify-between items-center'>
+                  {prop.name}
+                  <div 
+                  className='text-2xl'
+                  onClick={()=> dropdown==index ? setDropdown(null) : setDropdown(index)} >
+                  <Link to={'/'}>{prop.dropdownicon}</Link>
+                  </div>
+                  
+                </div>
+                
+
+                  {dropdown===index &&  
+                    <div className='bg-white shadow-lg'>
+                          {
+                            prop.dropdown ?.map((item, subindex)=>{
+                              return(
+                                <Link to={prop.sublinks[subindex]}>
+                                <div key={subindex} className='px-10 py-4  cursor-pointer hover:text-purple-500'
+                                style={{transition: '0.3s'}}
+                                >
+                                {item}
+                                </div>
+                                
+                                </Link>
+                                
+                              )
+                              
+                            }) 
+                          }
+                    </div>   
+                     
+                  }
+              </Link>
+            </>
+          )
+        })
+
+
         }
         </aside>
 
