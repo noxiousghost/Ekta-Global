@@ -7,6 +7,9 @@ const Home = () => {
   return (
     <div>
         <Nav/>
+        <div>
+          Hero Section
+        </div>
         {/* <Hero/> */}
         <Footer/>
     </div>

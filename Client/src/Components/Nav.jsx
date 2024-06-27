@@ -3,99 +3,143 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
   const navitem = [
-    { name : 'Student Services',
-      link : '/',
-      sublinks : 1
+    { 
+      name : 'Student Services',
+      dropdown : [
+        'Meet Us Online',
+        'Admission Counselling',
+        'Student Health Insurance',
+        'Student Accommodatoin',
+        'Refer and Earn'],
+      link: '/student-services',
+      sublinks : [
+        '/meet-us-online',
+        '/admission-consuelling',
+        '/student-health-insurance',
+        '/student-accomodation',
+        '/refer'],
+      dropdownicon : <i className="ri-arrow-down-s-line"></i>
     },
     { name : 'Study Abroad',
-      link : '/',
-      sublinks : 2
+      dropdown : [
+        'Study in Australia',
+        'Study in Canada',
+        'Study in UK',
+        'Study in Europe',
+        'Study in USA'],
+      link: '/study-abroad',
+      sublinks :  [
+        '/study-in-australia',
+        '/study-in-canada',
+        '/study-in-uk',
+        '/study-in-Europe',
+        '/study-in-usa'],
+      dropdownicon : <i className="ri-arrow-down-s-line"></i>
     },
     { name : 'Scholorships',
-      link : '/',
-      sublinks : 3
+      dropdown : [
+        'Scholoarship in Australia',
+        'Scholoarship in Canda',
+        'Scholoarship in UK',
+        'Scholoarship in Europe',
+        'Scholoarship in USA'],
+      link: '/scholorhips',
+      sublinks : [
+        '/Scholoarship-in-australia',
+        '/Scholoarship-in-canada',
+        '/Scholoarship-in-uk',
+        '/Scholoarship-in-Europe',
+        '/Scholoarship-in-usa'],
+      dropdownicon : <i className="ri-arrow-down-s-line"></i>
     },
     { name : 'Test Preparation',
-      link : '/',
-      sublinks : 4
+      dropdown : [
+        'English Training Centres',
+        'IELTS',
+        'TOFEL',
+        'PTE',
+        'GRE'],
+      link: '/test-preparation',
+      sublinks :  [
+        '/english-tranings',
+        '/ielts',
+        '/tofel',
+        '/pte',
+        '/gre'],
+      dropdownicon : <i className="ri-arrow-down-s-line"></i>
     },
     { name : 'Success Stories',
-      link : '/',
-      sublinks :5
+      link : '/student-testimonials'
     },
-    { name : 'Blog',
-      link : '/',
-      sublinks :6
+    { name : 'Blog',  
+      link : '/blog'
     },
-    
   ]
 
 const [toggleMenu, setToggleMenu] = useState('0px')
-
-  const [dropdown, setDropdown] = useState(true)
+const [dropdown, setDropdown] = useState(null)
  
-  const [hover, setHover]=useState(()=>{
-    return(
-      <div className='bg-white absolute shadow-lg'>
-        {
-          navitem.map((item, index)=>{
-            return(
-              <div key={index} className='px-10 py-4  cursor-pointer hover:bg-purple-500 hover:text-white'>
-               {item.sublinks}
-              </div>
-            )
-          })
-        }
-      </div>
-    )
-  })
-  
   return (
     <>
-    
+
         {/* desktop  */}
         <div className='lg:block hidden'>
-         <div className='flex justify-between items-center px-8 py-4 shadow-md'> 
-         <div>
-          <img className='w-[100px]' src="/Images/logo.jpg" alt="logo" />
-         </div>
+            <div className='flex justify-between items-center px-8 py-4 shadow-md'> 
 
-        <div className='flex gap-4 font-medium items-center '>
-        {
-          navitem.map((prop, index)=>{
-            
-            return(
-            <Link 
-            className='hover:text-purple-500'
-            onMouseOver={()=>setDropdown(true)} 
-            onMouseOut={()=>setDropdown(false)} 
-            key={index} to={prop.link}
-            >
-            {prop.name}
-            <i className="ri-arrow-down-s-line"></i>
+                  {/* compnay logo */}
+                  <div>
+                    <Link to='/'>
+                    <img className='w-[100px] hover:cursor-pointer' src="/Images/logo.jpg" alt="logo" />
+                    </Link>
+                  </div>
 
-            
-              {dropdown &&  hover}
-            
-            </Link>
-            )
-          })
-          
-        }
-        
-        
-        <Link href="/" className='bg-black px-6 py-2 text-white rounded-2xl hover:bg-purple-500 '>
-        Contact Us
-        </Link>
-       </div> 
+                  {/* navitems */}
+                  <div className='flex gap-4 font-medium items-center '>
+                      {
+                        navitem.map((prop, index)=>{
+                          return(
+                            <>
+                              <Link 
+                                onMouseOver={()=>setDropdown(index)} 
+                                onMouseOut={()=>setDropdown(null)} 
+                                key={index} to={prop.link}
+                              >
+                                <div className=' hover:text-purple-500'>
+                                  {prop.name}
+                                  {prop.dropdownicon}
+                                </div>
 
-         </div>
+                                  {dropdown===index &&  
+                                    <div className='bg-white absolute shadow-lg'>
+                                          {
+                                            prop.dropdown ?.map((item, subindex)=>{
+                                              return(
+                                                <Link to={prop.sublinks[subindex]}>
+                                                <div key={subindex} className='px-10 py-4  cursor-pointer hover:text-purple-500'
+                                                style={{transition: '0.3s'}}
+                                                >
+                                                {item}
+                                                </div>
+                                                </Link>
+                                              )
+                                            }) 
+                                          }
+                                    </div>       
+                                  }
+                              </Link>
+                            </>
+                          )
+                        })
+                      }
+                        <Link href="/" className='bg-black px-6 py-2 text-white rounded-2xl hover:bg-purple-500 '>
+                        Contact Us
+                        </Link>
+                  </div> 
+
+            </div>
          </div>
 
          
-         
-
-
         {/* mobile */}
         <div className='lg:hidden block z-40'>
         <aside 
