@@ -1,23 +1,29 @@
-import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './Components/Home'
-import 'remixicon/fonts/remixicon.css'
-import 'animate.css';
-import Blog from './Components/Blog';
-import StudentTestimonials from './Components/StudentTestimonials';
-import Notfound from './Components/Notfound';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "remixicon/fonts/remixicon.css";
+import "animate.css";
+
+import Home from "./single-pages/Home";
+import Blog from "./single-pages/Blog";
+import StudentTestimonials from "./single-pages/StudentTestimonials";
+
+import Notfound from "./Components/Notfound";
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
-   <BrowserRouter>
-   <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='/blog' element={<Blog/>}/>
-    <Route path='/student-testimonials' element={<StudentTestimonials/>}/>
-    <Route path='*' element={<Notfound/>}/>
-   </Routes>
-   </BrowserRouter>
-  )
-}
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/student-testimonials" element={<StudentTestimonials />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
