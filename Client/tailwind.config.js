@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "title-clr": "linear-gradient(0deg, #fdd5a1 36%, transparent 0%)",
+      },
       fontFamily: {
         dmSans: ["DM+Sans", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
