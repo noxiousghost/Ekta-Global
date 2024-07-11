@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
-import "animate.css";
+import "./cursor.css";
 
 import Home from "./single-pages/Home";
 import Blog from "./single-pages/Blog";
@@ -12,6 +12,16 @@ import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 
 const App = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/cursor/cursor.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <BrowserRouter>
       <Nav />
