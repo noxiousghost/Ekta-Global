@@ -52,7 +52,7 @@ function Sponsor() {
         <div className="slider-container">
           <Slider {...settings}>
             {[...Array(10)].map((_, i) => (
-              <div key={i} className="carousel-item">
+              <div data-magnetic key={i} className="carousel-item">
                 <img
                   src={`../../public/sponsor/sponsor_logo_${(i % 5) + 1}.png`}
                   alt={`Sponsor ${i + 1}`}
