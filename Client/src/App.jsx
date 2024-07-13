@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
+import { Cursor } from "react-creative-cursor";
+import "react-creative-cursor/dist/styles.css";
 
 import Home from "./single-pages/Home";
 import Blog from "./single-pages/Blog";
@@ -9,8 +11,6 @@ import StudentTestimonials from "./single-pages/StudentTestimonials";
 import Notfound from "./Components/Notfound";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
-import { Cursor } from "react-creative-cursor";
-import "react-creative-cursor/dist/styles.css";
 
 const App = () => {
   return (
