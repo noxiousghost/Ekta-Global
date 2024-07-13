@@ -45,13 +45,14 @@ function Sponsor() {
       <div className="container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold font-dmSans">
-            We are powered by industry.
+            We are powered by
+            <span className="bg-title-clr">&nbsp;Industry&nbsp;</span>.
           </h2>
         </div>
         <div className="slider-container">
           <Slider {...settings}>
             {[...Array(10)].map((_, i) => (
-              <div key={i} className="carousel-item">
+              <div data-magnetic key={i} className="carousel-item">
                 <img
                   src={`../../public/sponsor/sponsor_logo_${(i % 5) + 1}.png`}
                   alt={`Sponsor ${i + 1}`}
