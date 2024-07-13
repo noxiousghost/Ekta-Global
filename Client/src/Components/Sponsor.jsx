@@ -54,7 +54,7 @@ function Sponsor() {
             {[...Array(10)].map((_, i) => (
               <div key={i} className="carousel-item">
                 <img
-                  src={`../../public/sponsor/sponsor_logo_${(i % 5) + 1}.png`}
+                  src={`/sponsor/sponsor_logo_${(i % 5) + 1}.png`}
                   alt={`Sponsor ${i + 1}`}
                 />
               </div>
