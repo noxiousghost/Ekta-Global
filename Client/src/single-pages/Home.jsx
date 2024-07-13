@@ -2,6 +2,7 @@ import React from "react";
 import heroImg from "../../public/Images/hero2.jpg";
 import { Link } from "react-router-dom";
 import Sponsor from "../Components/Sponsor";
+import PolicySection from "../Components/Policy";
 
 const Hero = () => {
   return (
@@ -51,10 +52,11 @@ const Hero = () => {
 
 const Home = () => {
   return (
-    <main className="page_content">
+    <main data-cursor="-opaque" className="page_content">
       <Hero />
       <Sponsor />
-      <section className="pt-32"></section>
+      <PolicySection />
+      <section className="py-32"></section>
     </main>
   );
 };
