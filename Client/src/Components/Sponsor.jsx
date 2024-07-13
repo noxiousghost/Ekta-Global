@@ -45,7 +45,8 @@ function Sponsor() {
       <div className="container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold font-dmSans">
-            We are powered by industry.
+            We are powered by
+            <span className="bg-title-clr">&nbsp;Industry&nbsp;</span>.
           </h2>
         </div>
         <div className="slider-container">
