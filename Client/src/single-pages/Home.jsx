@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../../public/Images/hero2.jpg";
+import heroImg from "/Images/hero2.jpg";
 import { Link } from "react-router-dom";
 import Sponsor from "../Components/Sponsor";
 import PolicySection from "../Components/Policy";
