@@ -51,6 +51,7 @@ function About() {
       <AboutUs />
       <div className="py-28 bg-gray-200">
         <Sponsor />
+        <p>hello this is for testing purpose</p>
       </div>
     </main>
   );
